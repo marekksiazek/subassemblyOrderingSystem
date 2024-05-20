@@ -1,0 +1,90 @@
+.formTitle{
+  font-family: "Montserrat";
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #6B6B6B solid 1px;
+}
+
+.formTitle::first-letter{
+  font-size: 2.5rem;
+  color: #A50034;
+}
+
+
+.mat-elevation-z8{
+  overflow: auto;
+}
+
+table {
+  text-align: center !important;
+}
+
+.mat-mdc-form-field {
+  font-size: 1.2rem;
+  font-family: 'Montserrat' !important;
+}
+
+td, th {
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Montserrat' !important;
+}
+
+th {
+  font-weight: 700;
+}
+.checkboxWrapper{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.searchWrapper{
+  width: 100%;
+}
+
+.tableMain {
+  font-size: 10px;
+}
+
+.checkbox{
+  flex-basis: 12.5% !important;
+}
+
+.searchLabel{
+  font-family: 'Montserrat' !important;
+}
+
+.searchInput{
+  width: 50% !important; 
+}
+
+.searchSection{
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchChild{
+  flex-basis: 45%;
+}
+
+.flagWrapper{
+  display: flex;
+}
+
+.flagButton{
+  border: none;
+  background: none;
+  transition: 0.5s all;
+}
+
+.flagButton:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.mat-sort-header-content{
+  font-family: 'Montserrat' !important;
+}

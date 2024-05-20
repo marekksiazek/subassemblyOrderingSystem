@@ -1,0 +1,42 @@
+.mainWrapper{
+    margin: 0 auto;
+    padding-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.textWrapper{
+    flex-basis: 50%;
+}
+
+.systemName{
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#6B6B6B;
+    letter-spacing: 1.2rem;
+    font-size: 4rem;
+    line-height: 200%;
+    text-align: left;
+    padding-left: 8rem;
+}
+
+.systemName::first-letter{
+    color: #A50034;
+    font-size: 5.5rem;
+}
+
+img {
+    width: 30%;
+}
+
+.mainPageImage{
+    flex-basis: 50%;
+    padding-right: 8rem;
+    background-image: url("../../../assets/backgroundImage.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}

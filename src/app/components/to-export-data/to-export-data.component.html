@@ -1,0 +1,91 @@
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+</mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="model_suffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Model & suffix:</th>
+        <td mat-cell *matCellDef="let row"> {{row.modelSuffix}}</td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="suffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Suffix:</th>
+        <td mat-cell *matCellDef="let row"> {{row.suffix}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="part1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Part 1:</th>
+        <td mat-cell *matCellDef="let row"> {{row.part1}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="part2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Part 2:</th>
+        <td mat-cell *matCellDef="let row"> {{row.part2}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="part3">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Part 3:</th>
+        <td mat-cell *matCellDef="let row"> {{row.part3}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="part4">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Part 4:</th>
+        <td mat-cell *matCellDef="let row"> {{row.part4}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c_bom_model_suffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>C BOM Model & Suffix:</th>
+        <td mat-cell *matCellDef="let row"> {{row.cbomModelSuffix}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bom_suffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Suffix:</th>
+        <td mat-cell *matCellDef="let row"> {{row.bomSuffix}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bom_part1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Part 1:</th>
+        <td mat-cell *matCellDef="let row"> {{row.bomPart1}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bom_part2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Part 2: </th>
+        <td mat-cell *matCellDef="let row"> {{row.bomPart2}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bom_part3">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Part 3: </th>
+        <td mat-cell *matCellDef="let row"> {{row.bomPart3}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bom_part4">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Part 4: </th>
+        <td mat-cell *matCellDef="let row"> {{row.bomPart4}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="bom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM: </th>
+        <td mat-cell *matCellDef="let row"> {{row.bom}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of models"></mat-paginator>
+  </div>

@@ -1,0 +1,132 @@
+
+.formTitle{
+    font-family: "Montserrat";
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: #6B6B6B solid 1px;
+}
+
+.formTitle::first-letter{
+    font-size: 2.5rem;
+    color: #A50034;
+}
+
+.form{
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.modelWrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+}
+
+.bomWrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+}
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel{
+    font-family: "Montserrat";
+    font-size: 1.6rem;
+    z-index: 3;
+    font-weight: 600;
+    color: #6B6B6B;
+}
+
+.formLabel::first-letter{
+    font-size: 2rem;
+    color: #A50034;
+}
+
+.formInput{
+    border: none;
+    border-bottom: #6B6B6B solid 1px;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-family: "Montserrat";
+}
+
+.formInput:focus{
+    outline: none;
+    margin-top: 2rem;
+    transition: 0.5s;
+}
+
+.formInput:valid{
+    margin-top: 2rem;
+}
+
+.formBtn{
+    width: fit-content;
+    padding: 0.5rem 5rem;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 2rem;
+    background-color: #A50034;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    border: none;
+}
+
+.formBtn:disabled{
+    color: #FFFFFF;
+    border: none;
+    background-color: #6B6B6B;
+}
+
+.formBtn:valid{
+    cursor: pointer;
+}
+
+.searchWrapper{
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    margin-top: 4rem;
+}
+
+.formBtnUpdate{
+    width: fit-content;
+    padding: 0.5rem 5rem;
+    margin-left: auto;
+    font-size: 2rem;
+    background-color: #A50034;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    border: none;
+}
+
+.formBtnUpdate:disabled{
+    color: #FFFFFF;
+    border: none;
+    background-color: #6B6B6B;
+}
+
+.formBtnUpdate:valid{
+    cursor: pointer;
+}
+
+.btnWrapper{
+    display: flex;
+    align-items: center;
+}
+
+.row{
+    margin-bottom: 2rem;
+}
+
+

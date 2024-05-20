@@ -1,0 +1,130 @@
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+</mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="workorder">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Workorder: </th>
+        <td mat-cell *matCellDef="let row"> {{row.workorder}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Model: </th>
+        <td mat-cell *matCellDef="let row"> {{row.model}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="suffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Suffix: </th>
+        <td mat-cell *matCellDef="let row"> {{row.suffixProd}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="day1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 1: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day1}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="day2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 2: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day2}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="day3">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 3: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day3}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day4">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 4: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day4}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day5">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 5: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day5}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day6">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 6: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day6}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day7">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 7: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day7}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day8">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 8: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day8}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day9">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 9: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day9}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day10">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 10: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day10}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day11">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 11: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day11}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day12">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 12: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day12}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day13">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 13: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day13}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day14">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 14: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day14}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day15">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 15: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day15}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="day16">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Day 16: </th>
+        <td mat-cell *matCellDef="let row"> {{row.day16}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total: </th>
+        <td mat-cell *matCellDef="let row"> {{row.total}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="shortSuffix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Short Suffix: </th>
+        <td mat-cell *matCellDef="let row"> {{row.suffixShort}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of models"></mat-paginator>
+  </div>
