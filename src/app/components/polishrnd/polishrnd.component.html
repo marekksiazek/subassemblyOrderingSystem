@@ -66,10 +66,10 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions:</th>
             <td mat-cell *matCellDef="let row" style="min-width: 120px;">
-                    <button class="actionButton">
+                    <button class="actionButton" >
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button class="actionButton">
+                    <button class="actionButton" (click)="doneSubmit(row)">
                         <mat-icon>check</mat-icon>
                     </button>
             </td>

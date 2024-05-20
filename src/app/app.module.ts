@@ -19,6 +19,7 @@ import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PolishrndComponent } from './components/polishrnd/polishrnd.component';
+import { DialogFormPolishRnDComponent } from './components/polishrnd/dialog-form-polish-rn-d/dialog-form-polish-rn-d.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PolishrndComponent } from './components/polishrnd/polishrnd.component';
     ModelFormComponent,
     MainpageComponent,
     PolishrndComponent,
+    DialogFormPolishRnDComponent,
 
   ],
   imports: [

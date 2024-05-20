@@ -104,6 +104,7 @@ export class ModelWithAllDataComponent implements OnInit {
  
   ngOnInit(): void{
     this.modelWithAllDataServ.getModelsWithAllData().subscribe((response) => {
+      console.log(response);
       this.dataSource = new MatTableDataSource(response);
 
       this.dataSource.paginator = this.paginator;
