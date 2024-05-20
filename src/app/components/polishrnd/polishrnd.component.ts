@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { PolishrndService } from '../../services/polishrnd.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { PolishRnDModel } from '../../types/polisRnDModel';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Model } from '../../types/model';
@@ -17,6 +16,7 @@ import {
   MatDialogClose,
 } from '@angular/material/dialog';
 import { DialogFormPolishRnDComponent } from './dialog-form-polish-rn-d/dialog-form-polish-rn-d.component';
+import { PolishRnDModel } from '../../types/polishRnDModels';
 
 @Component({
   selector: 'app-polishrnd',
@@ -40,7 +40,7 @@ export class PolishrndComponent implements OnInit{
 
   ngOnInit(): void {
     this.polishrndServ.getPolishRnDModelsWithAllData().subscribe((response) =>{
-      this.models = response;
+      this.models=response;
       this.dataSource = new MatTableDataSource(this.models);
 
       this.dataSource.paginator = this.paginator;

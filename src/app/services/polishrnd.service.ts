@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PolishRnDModel } from '../types/polisRnDModel';
 import { Observable } from 'rxjs';
 import { Model } from '../types/model';
+import { PolishRnDModel } from '../types/polishRnDModels';
 
 @Injectable({
   providedIn: 'root'
