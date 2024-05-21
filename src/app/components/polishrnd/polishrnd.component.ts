@@ -73,6 +73,9 @@ export class PolishrndComponent implements OnInit{
         console.log({error})
       }}
       )
-    
+  }
+
+  openEdit(){
+    this.dialog.open(DialogFormPolishRnDComponent);
   }
 }

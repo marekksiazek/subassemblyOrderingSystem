@@ -1,29 +1,47 @@
 .formTitle{
-    font-family: "Montserrat";
-    font-size: 2rem;
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: #6B6B6B solid 1px;
-  }
+  font-family: "Montserrat";
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #6B6B6B solid 1px;
+}
 
-  .mat-elevation-z8{
-    overflow: auto;
-  }
+.mat-elevation-z8{
+  overflow: auto;
+}
 
-  .formTitle::first-letter{
-    font-size: 2.5rem;
-    color: #A50034;
-  }
+.formTitle::first-letter{
+  font-size: 2.5rem;
+  color: #A50034;
+}
 
-  .actionButton{
-    border: none;
-    background: none;
-  }
+.actionButton{
+  border: none;
+  background: none;
+}
 
-  .actionButton:hover{
-    cursor: pointer;
-  }
+.actionButton:hover{
+  cursor: pointer;
+}
 
-  .mat-icon{
-    color: #A50034;
-  }
+.mat-icon{
+  color: #A50034;
+}
+table {
+  text-align: center !important;
+}
+
+.mat-mdc-form-field {
+  font-size: 1.2rem;
+  font-family: 'Montserrat' !important;
+}
+
+td, th {
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Montserrat' !important;
+}
+
+th {
+  font-weight: 700;
+}

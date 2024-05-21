@@ -1,6 +1,6 @@
 import { trigger, transition, style, query, animate, animateChild, group } from '@angular/animations';
 export const routeTransitionAnimations = trigger('triggerName', [
-    transition('main-page <=> model-with-all-data, model-with-all-data <=> model-form, model-form <=> main-page, main-page <=> polishrnd, model-with-all-data <=> polishrnd, model-form <=> polishrnd, korearnd <=> main-page, korearnd <=> model-with-all-data, korearnd <=> model-form, korearnd <=> polishrnd', [
+    transition('main-page <=> model-with-all-data, model-with-all-data <=> model-form, model-form <=> main-page, main-page <=> polishrnd, model-with-all-data <=> polishrnd, model-form <=> polishrnd, korearnd <=> main-page, korearnd <=> model-with-all-data, korearnd <=> model-form, korearnd <=> polishrnd, toApprove <=> main-page, toApprove <=> model-with-all-data, toApprove <=> model-form, toApprove <=> polishrnd, toApprove <=> korearnd', [
 		style({ position: 'relative' }),
 		query(':enter, :leave', [
 			style({
@@ -18,7 +18,7 @@ export const routeTransitionAnimations = trigger('triggerName', [
 		]),
 		query(':enter', animateChild())
 	]),
-	transition('main-page <=> model-with-all-data, model-with-all-data <=> model-form, model-form <=> main-page, main-page <=> polishrnd, model-with-all-data <=> polishrnd, model-form <=> polishrnd, korearnd <=> main-page, korearnd <=> model-with-all-data, korearnd <=> model-form, korearnd <=> polishrnd', [
+	transition('main-page <=> model-with-all-data, model-with-all-data <=> model-form, model-form <=> main-page, main-page <=> polishrnd, model-with-all-data <=> polishrnd, model-form <=> polishrnd, korearnd <=> main-page, korearnd <=> model-with-all-data, korearnd <=> model-form, korearnd <=> polishrnd, toApprove <=> main-page, toApprove <=> model-with-all-data, toApprove <=> model-form, toApprove <=> polishrnd, toApprove <=> korearnd', [
 		style({ position: 'relative' }),
 		query(':enter, :leave', [
 			style({

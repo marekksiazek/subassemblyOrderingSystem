@@ -22,6 +22,7 @@ import { PolishrndComponent } from './components/polishrnd/polishrnd.component';
 import { DialogFormPolishRnDComponent } from './components/polishrnd/dialog-form-polish-rn-d/dialog-form-polish-rn-d.component';
 import { KorearndComponent } from './components/korearnd/korearnd.component';
 import { ToapproveComponent } from './components/toapprove/toapprove.component';
+import { ToApproveModelsComponent } from './components/to-approve-models/to-approve-models.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ToapproveComponent } from './components/toapprove/toapprove.component';
     DialogFormPolishRnDComponent,
     KorearndComponent,
     ToapproveComponent,
+    ToApproveModelsComponent,
 
   ],
   imports: [

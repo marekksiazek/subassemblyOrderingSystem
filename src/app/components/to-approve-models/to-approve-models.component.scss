@@ -28,10 +28,6 @@
   color: #A50034;
 }
 
-.buttonWrapper{
-  display: flex;
-}
-
 table {
   text-align: center !important;
 }
@@ -49,4 +45,5 @@ td, th {
 
 th {
   font-weight: 700;
+  width: fit-content;
 }
