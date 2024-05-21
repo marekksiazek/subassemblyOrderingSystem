@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PolishrndComponent } from './components/polishrnd/polishrnd.component';
 import { DialogFormPolishRnDComponent } from './components/polishrnd/dialog-form-polish-rn-d/dialog-form-polish-rn-d.component';
+import { KorearndComponent } from './components/korearnd/korearnd.component';
+import { ToapproveComponent } from './components/toapprove/toapprove.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { DialogFormPolishRnDComponent } from './components/polishrnd/dialog-form
     MainpageComponent,
     PolishrndComponent,
     DialogFormPolishRnDComponent,
+    KorearndComponent,
+    ToapproveComponent,
 
   ],
   imports: [

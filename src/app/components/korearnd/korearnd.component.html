@@ -1,25 +1,6 @@
 <main class="main">
-  <h2 class="formTitle">Choose columns to display:</h2>
+    <h2 class="formTitle">Complete data:</h2>
 
-  <form [formGroup]="form" class="checkboxWrapper">
-      <mat-checkbox class="checkbox"  *ngFor="let cd of columnDefinitions"  [formControlName]="cd.def">
-        {{cd.label}} 
-      </mat-checkbox>
-  </form>
-
-  <section class="searchSection">
-    <div class="searchChild">
-      <h2 class="formTitle">Find model in table:</h2>
-      <mat-form-field class="searchWrapper">
-        <mat-label class="searchLabel">Search model: </mat-label>
-        <input class="searchInput" matInput (keyup)="applyFilter($event)" #input>
-      </mat-form-field>
-    </div>
-
-  </section>
-  
-
-  <h2 class="formTitle">Models:</h2>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort class="tableMain">
       
@@ -82,49 +63,22 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM Part 4:</th>
           <td mat-cell *matCellDef="let row"> {{row.bomPart4}} </td>
         </ng-container>
-
-        <ng-container matColumnDef="total">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
-          <td mat-cell *matCellDef="let row"> {{row.total}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="bom">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>BOM</th>
-          <td mat-cell *matCellDef="let row">{{row.bom}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="suffixCompare">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Suffix Compare</th>
-          <td mat-cell *matCellDef="let row">
-            <p *ngIf="row.suffix==row.bomSuffix">True</p>
-            <p *ngIf="row.suffix!=row.bomSuffix">False</p>
-          </td>
-        </ng-container>
-        <ng-container matColumnDef="partNoCompare">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Part Compare</th>
-          <td mat-cell *matCellDef="let row">
-            <p *ngIf="row.part1==row.bombomPart1">True</p>
-            <p *ngIf="row.part1!=row.bombomPart1">False</p>
-          </td>
-        </ng-container>
-        <ng-container matColumnDef="rnd">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Send to RnD:</th>
-          <td mat-cell *matCellDef="let row">
-            <div class="flagWrapper">
-              <button class="flagButton" (click)="sendToPolishRnD(row)"><img src="../../../assets/poland.svg" alt=""></button>
-              <button class="flagButton" (click)="sendToKoreaRnD(row)"><img src="../../../assets/korea.svg" alt=""></button>
-            </div>
-          </td>
-        </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-
-        <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-        </tr>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions:</th>
+            <td mat-cell *matCellDef="let row" style="min-width: 120px;">
+                    <button class="actionButton" >
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="actionButton" (click)="doneSubmit(row)">
+                        <mat-icon>check</mat-icon>
+                    </button>
+            </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of models"></mat-paginator>
     </div>
+
 </main>

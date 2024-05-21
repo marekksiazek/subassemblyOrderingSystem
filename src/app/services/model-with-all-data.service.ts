@@ -10,8 +10,9 @@ import { Model } from '../types/model';
 export class ModelWithAllDataService {
 
   private getAllModelUrl = 'http://localhost:8080/api/modelWithAllData';
-  private putModelToPolishRnDUrl = 'http://localhost:8080/api/modelWithAllData/done';
-
+  private putModelToPolishRnDUrl = 'http://localhost:8080/api/modelWithAllData/toPolishRnd';
+  private putModelToKoreaRnDUrl = 'http://localhost:8080/api/modelWithAllData/toKoreaRnd';
+  
   constructor(private http: HttpClient) { }
 
   getModelsWithAllData(){
@@ -20,6 +21,11 @@ export class ModelWithAllDataService {
 
   putModelToPolishRnD(modelSuffix: string, updatedModel: Model): Observable <any>{
     const url = `${this.putModelToPolishRnDUrl}/${modelSuffix}`;
+    return this.http.put(url, updatedModel);
+  }
+
+  putModelToKoreaRnD(modelSuffix: string, updatedModel: Model): Observable <any>{
+    const url = `${this.putModelToKoreaRnDUrl}/${modelSuffix}`;
     return this.http.put(url, updatedModel);
   }
 }

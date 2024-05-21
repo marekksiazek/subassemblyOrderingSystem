@@ -209,4 +209,32 @@ export class ModelWithAllDataComponent implements OnInit {
         }
       })
     }
+
+    sendToKoreaRnD(object: Model){
+      this.modelWithAllDataServ.putModelToKoreaRnD(object.modelSuffix, {
+        modelSuffix: object.modelSuffix,
+        suffix: object.suffix,
+        part1: object.part1,
+        part2: object.part2,
+        part3: object.part3,
+        part4: object.part4,
+        cbomModelSuffix: object.cbomModelSuffix,
+        bomSuffix: object.bomSuffix,
+        bomPart1: object.bomPart1,
+        bomPart2: object.bomPart2,
+        bomPart3: object.bomPart3,
+        bomPart4: object.bomPart4
+      }).subscribe({
+        next: () => this.modelWithAllDataServ.getModelsWithAllData().subscribe((response) => {
+          this.models = response;
+          this.dataSource = new MatTableDataSource(this.models);
+        }),
+        error: (error) => {
+          console.warn(error.message);
+          console.log({error});
+        }
+      })
+    }
+
+
 }
