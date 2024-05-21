@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ModelWithAllDataService } from '../../services/model-with-all-data.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -8,6 +8,7 @@ import { FormControl, FormGroup} from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 import { merge } from 'rxjs';
 import { Model } from '../../types/model';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-model-with-all-data',
@@ -29,7 +30,7 @@ export class ModelWithAllDataComponent implements OnInit {
   constructor(private modelWithAllDataServ: ModelWithAllDataService) {};
 
 
-
+  @ViewChild('TABLE') table: ElementRef;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -236,5 +237,12 @@ export class ModelWithAllDataComponent implements OnInit {
       })
     }
 
+    exportToExcel(){
+      const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+  
+      XLSX.writeFile(wb, 'TableSize.xlsx');
+    }
 
 }

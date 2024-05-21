@@ -3,13 +3,13 @@
 
     <section class="exportSection">
       <p class="exportDataText">Export data: </p>
-      <button class="actionButton">
+      <button class="actionButton" (click)="exportToExcel()">
         <mat-icon>download</mat-icon>
       </button>
     </section>
     
 
-    <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8" #TABLE>
       <table mat-table [dataSource]="dataSource" matSort class="tableMain">
       
         <ng-container matColumnDef="modelSuffix">
@@ -74,7 +74,7 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions:</th>
             <td mat-cell *matCellDef="let row" style="min-width: 120px;">
-                    <button class="actionButton" >
+                    <button class="actionButton" (click)="openEdit(row)">
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button class="actionButton" (click)="doneSubmit(row)">

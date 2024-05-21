@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { KoreaRnDModel } from '../../types/koreaRnDModels';
 import { FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { KorearndService } from '../../services/korearnd.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Model } from '../../types/model';
+import { DialogFormKoreaRndComponent } from './dialog-form-korea-rnd/dialog-form-korea-rnd.component';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-korearnd',
@@ -18,6 +20,7 @@ export class KorearndComponent implements OnInit{
   public models: KoreaRnDModel[];
   public rndForm: FormGroup;
 
+  @ViewChild('TABLE') table: ElementRef;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -25,7 +28,7 @@ export class KorearndComponent implements OnInit{
 
   dataSource: MatTableDataSource<KoreaRnDModel>;
 
-  constructor(private koreanRnDServ: KorearndService, public dialog: MatDialog){}
+  constructor(private koreanRnDServ: KorearndService, public dialog: MatDialog, private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
     this.koreanRnDServ.getKoreaRnDModelsWithAllData().subscribe((response) => {
@@ -63,4 +66,22 @@ export class KorearndComponent implements OnInit{
       )
     
   }
+
+  openEdit(object: Model){
+    this.dialog.open(DialogFormKoreaRndComponent, {data: object});
+  }
+
+  subscribeToRefreshEvent(){
+    this.koreanRnDServ.getKoreaRnDModelsWithAllData().subscribe(() => this.cdr.detectChanges());
+  }
+
+  exportToExcel(){
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    XLSX.writeFile(wb, 'TableSize.xlsx');
+  }
+
+
 }

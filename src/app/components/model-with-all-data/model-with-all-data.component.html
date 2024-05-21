@@ -7,6 +7,13 @@
       </mat-checkbox>
   </form>
 
+  <section class="exportSection">
+    <p class="exportDataText">Export data: </p>
+    <button class="actionButton" (click)="exportToExcel()">
+      <mat-icon>download</mat-icon>
+    </button>
+  </section>
+
   <section class="searchSection">
     <div class="searchChild">
       <h2 class="formTitle">Find model in table:</h2>
@@ -20,7 +27,7 @@
   
 
   <h2 class="formTitle">Models:</h2>
-    <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8" #TABLE>
       <table mat-table [dataSource]="dataSource" matSort class="tableMain">
       
         <ng-container matColumnDef="modelSuffix">
