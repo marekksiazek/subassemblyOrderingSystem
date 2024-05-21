@@ -1,1 +1,61 @@
-<p>dialog-form-polish-rn-d works!</p>
+<h3 class="dialogBoxTitle">Complete data:</h3>
+<mat-dialog-content class="dialogBox">
+    <form [formGroup]="FormData" (ngSubmit)="updateSubmit()" class="form">
+        <section class="modelWrapper">
+            <div class="addForm">
+                <label for="Model" class="formLabel">Model with suffix:</label>
+                <input type="text" class="formInput" name="Model" aria-describedby="modelHelp" formControlName="modelSuffix">
+            </div>
+            <div class="addForm">
+                <label for="Suffix" class="formLabel">Short suffix:</label>
+                <input type="text" class="formInput" name="Suffix" formControlName="suffix">
+            </div>
+            <div class="addForm">
+                <label for="Part1" class="formLabel">Part 1:</label>
+                <input type="text" class="formInput" name="Part1" formControlName="part1">
+            </div>
+            <div class="addForm">
+                <label for="Part2" class="formLabel">Part 2:</label>
+                <input type="text" class="formInput" name="Part2" formControlName="part2">
+            </div>
+            <div class="addForm">
+                <label for="Part3" class="formLabel">Part 3:</label>
+                <input type="text" class="formInput" name="Part3" formControlName="part3">
+            </div>
+            <div class="addForm">
+                <label for="Part4" class="formLabel">Part 4:</label>
+                <input type="text" class="formInput" name="Part4"  formControlName="part4">
+            </div>
+        </section>
+        <section class="bomWrapper">
+            <div class="addForm">
+                <label for="CBomModelSuffix" class="formLabel">Copy BOM Model:</label>
+                <input type="text" class="formInput" name="CBomModelSuffix"  formControlName="CBomModelSuffix">
+            </div>
+            <div class="addForm">
+                <label for="BomSuffix" class="formLabel">BOM Suffix:</label>
+                <input type="text" class="formInput" name="BomSuffix" formControlName="bomSuffix">
+            </div>
+            <div class="addForm">
+                <label for="BomPart1" class="formLabel">BOM Part 1:</label>
+                <input type="text" class="formInput" name="BomPart1" formControlName="bomPart1">
+            </div>
+            <div class="addForm">
+                <label for="BomPart2" class="formLabel">BOM Part 2:</label>
+                <input type="text" class="formInput" name="BomPart2" formControlName="bomPart2">
+            </div>
+            <div class="addForm">
+                <label for="BomPart3" class="formLabel">BOM Part 3:</label>
+                <input type="text" class="formInput" name="BomPart3" formControlName="bomPart3">
+            </div>
+            <div class="addForm">
+                <label for="BomPart4" class="formLabel">BOM Part 4:</label>
+                <input type="text" class="formInput" name="BomPart4" formControlName="bomPart4">
+            </div>
+        </section>
+        <button type="submit"  class="formBtnUpdate" (click)="openSnackBar('Model updated!', '')" [disabled]="!FormData.valid" mat-dialog-close>Update</button>
+    
+    
+    </form>
+</mat-dialog-content>
+

@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { JsonPipe } from '@angular/common';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatCheckboxModule,
     JsonPipe,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ]
 
 })

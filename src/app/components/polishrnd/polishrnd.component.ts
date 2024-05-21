@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { PolishrndService } from '../../services/polishrnd.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -35,7 +35,7 @@ export class PolishrndComponent implements OnInit{
   dataSource: MatTableDataSource<PolishRnDModel>;
 
 
-  constructor(private polishrndServ: PolishrndService, public dialog: MatDialog) {}
+  constructor(private polishrndServ: PolishrndService, public dialog: MatDialog, private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
@@ -45,6 +45,7 @@ export class PolishrndComponent implements OnInit{
 
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.subscribeToRefreshEvent();
     });
     
   }
@@ -75,7 +76,11 @@ export class PolishrndComponent implements OnInit{
       )
   }
 
-  openEdit(){
-    this.dialog.open(DialogFormPolishRnDComponent);
+  openEdit(object: Model){
+    this.dialog.open(DialogFormPolishRnDComponent, {data: object});
+  }
+
+  subscribeToRefreshEvent(){
+    this.polishrndServ.getPolishRnDModelsWithAllData().subscribe(() => this.cdr.detectChanges());
   }
 }

@@ -50,3 +50,19 @@ td, th {
 th {
   font-weight: 700;
 }
+
+.exportSection{
+display: flex;
+font-size: 1.8rem;
+margin-left: auto;
+padding-right: 5rem;
+width: fit-content;
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+
+.exportSection > p {
+  margin-bottom: 0 !important;
+}
+
+
